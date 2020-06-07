@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Environment</key>
+	<dict>
+		<key>DEV</key>
+		<dict>
+			<key>access_token</key>
+			<string>APP_USR-6195622331342548-060718-9fbf6f5f9263e11a69c1bd3e1c256bc2-580975891</string>
+			<key>public_key</key>
+			<string>APP_USR-696eaac3-7084-4296-b20a-6aabb2b0fdd3</string>
+			<key>base_url</key>
+			<string>https://api.mercadopago.com/v1/</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

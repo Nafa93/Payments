@@ -7,6 +7,7 @@
 //
 
 #import "AmountViewController.h"
+#import "ServiceManager.h"
 
 @interface AmountViewController ()
 
@@ -27,7 +28,9 @@
 }
 
 - (IBAction)makePayment:(id)sender {
+    ServiceManager *sharedInstance = [ServiceManager sharedInstance];
     
+    [sharedInstance getPaymentMethods];
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
