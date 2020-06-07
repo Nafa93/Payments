@@ -14,6 +14,8 @@
 		196E4708248C59A200F004BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E4707248C59A200F004BC /* main.m */; };
 		196E4714248C7A2200F004BC /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E4712248C7A2200F004BC /* HomeViewController.m */; };
 		196E4715248C7A2200F004BC /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196E4713248C7A2200F004BC /* HomeViewController.xib */; };
+		196E4719248C7E3000F004BC /* AmountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E4717248C7E3000F004BC /* AmountViewController.m */; };
+		196E471A248C7E3000F004BC /* AmountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196E4718248C7E3000F004BC /* AmountViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,9 @@
 		196E4711248C7A2200F004BC /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		196E4712248C7A2200F004BC /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		196E4713248C7A2200F004BC /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		196E4716248C7E3000F004BC /* AmountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AmountViewController.h; sourceTree = "<group>"; };
+		196E4717248C7E3000F004BC /* AmountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AmountViewController.m; sourceTree = "<group>"; };
+		196E4718248C7E3000F004BC /* AmountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmountViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +87,9 @@
 				196E4711248C7A2200F004BC /* HomeViewController.h */,
 				196E4712248C7A2200F004BC /* HomeViewController.m */,
 				196E4713248C7A2200F004BC /* HomeViewController.xib */,
+				196E4716248C7E3000F004BC /* AmountViewController.h */,
+				196E4717248C7E3000F004BC /* AmountViewController.m */,
+				196E4718248C7E3000F004BC /* AmountViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -157,6 +165,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				196E471A248C7E3000F004BC /* AmountViewController.xib in Resources */,
 				196E4705248C59A200F004BC /* LaunchScreen.storyboard in Resources */,
 				196E4702248C59A200F004BC /* Assets.xcassets in Resources */,
 				196E4715248C7A2200F004BC /* HomeViewController.xib in Resources */,
@@ -170,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				196E4719248C7E3000F004BC /* AmountViewController.m in Sources */,
 				196E46F7248C59A000F004BC /* AppDelegate.m in Sources */,
 				196E4708248C59A200F004BC /* main.m in Sources */,
 				196E46FA248C59A000F004BC /* SceneDelegate.m in Sources */,
