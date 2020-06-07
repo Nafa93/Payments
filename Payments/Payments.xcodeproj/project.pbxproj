@@ -84,12 +84,8 @@
 		196E470E248C79E000F004BC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				196E4711248C7A2200F004BC /* HomeViewController.h */,
-				196E4712248C7A2200F004BC /* HomeViewController.m */,
-				196E4713248C7A2200F004BC /* HomeViewController.xib */,
-				196E4716248C7E3000F004BC /* AmountViewController.h */,
-				196E4717248C7E3000F004BC /* AmountViewController.m */,
-				196E4718248C7E3000F004BC /* AmountViewController.xib */,
+				196E471C248D660D00F004BC /* Amount */,
+				196E471B248D65FB00F004BC /* Home */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -106,6 +102,26 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		196E471B248D65FB00F004BC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				196E4711248C7A2200F004BC /* HomeViewController.h */,
+				196E4712248C7A2200F004BC /* HomeViewController.m */,
+				196E4713248C7A2200F004BC /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		196E471C248D660D00F004BC /* Amount */ = {
+			isa = PBXGroup;
+			children = (
+				196E4716248C7E3000F004BC /* AmountViewController.h */,
+				196E4717248C7E3000F004BC /* AmountViewController.m */,
+				196E4718248C7E3000F004BC /* AmountViewController.xib */,
+			);
+			path = Amount;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
