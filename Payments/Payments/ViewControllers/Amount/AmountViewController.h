@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AmountViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AmountViewController : UIViewController <UITextFieldDelegate>
+
+@property (nonatomic, strong) AmountViewModel *amountViewModel;
 
 @end
 

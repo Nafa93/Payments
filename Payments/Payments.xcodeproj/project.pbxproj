@@ -19,6 +19,9 @@
 		196E471F248D6DCB00F004BC /* ServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E471E248D6DCB00F004BC /* ServiceManager.m */; };
 		196E4722248D7B6700F004BC /* Service.plist in Resources */ = {isa = PBXBuildFile; fileRef = 196E4721248D7B6700F004BC /* Service.plist */; };
 		196E4727248DABFB00F004BC /* PaymentMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E4726248DABFB00F004BC /* PaymentMethod.m */; };
+		196E472A248EC7BC00F004BC /* AmountViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E4729248EC7BC00F004BC /* AmountViewModel.m */; };
+		196E472F248ED25900F004BC /* PaymentMethodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E472D248ED25900F004BC /* PaymentMethodsViewController.m */; };
+		196E4730248ED25900F004BC /* PaymentMethodsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196E472E248ED25900F004BC /* PaymentMethodsViewController.xib */; };
 		289FF9122C74911B001F68E3 /* Pods_Payments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100FCDB1149E355E6A774BDD /* Pods_Payments.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +47,11 @@
 		196E4721248D7B6700F004BC /* Service.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Service.plist; sourceTree = "<group>"; };
 		196E4723248D9D6400F004BC /* PaymentMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentMethod.h; sourceTree = "<group>"; };
 		196E4726248DABFB00F004BC /* PaymentMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentMethod.m; sourceTree = "<group>"; };
+		196E4728248EC7BC00F004BC /* AmountViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AmountViewModel.h; sourceTree = "<group>"; };
+		196E4729248EC7BC00F004BC /* AmountViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AmountViewModel.m; sourceTree = "<group>"; };
+		196E472C248ED25900F004BC /* PaymentMethodsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentMethodsViewController.h; sourceTree = "<group>"; };
+		196E472D248ED25900F004BC /* PaymentMethodsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentMethodsViewController.m; sourceTree = "<group>"; };
+		196E472E248ED25900F004BC /* PaymentMethodsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentMethodsViewController.xib; sourceTree = "<group>"; };
 		2BEC7D1BA78D34759D17B8F0 /* Pods-Payments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payments.release.xcconfig"; path = "Target Support Files/Pods-Payments/Pods-Payments.release.xcconfig"; sourceTree = "<group>"; };
 		D5A079FFF69097527E975BA9 /* Pods-Payments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payments.debug.xcconfig"; path = "Target Support Files/Pods-Payments/Pods-Payments.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +108,7 @@
 		196E470E248C79E000F004BC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				196E472B248ED23900F004BC /* PaymentMethods */,
 				196E471C248D660D00F004BC /* Amount */,
 				196E471B248D65FB00F004BC /* Home */,
 			);
@@ -109,6 +118,8 @@
 		196E470F248C79F000F004BC /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				196E4728248EC7BC00F004BC /* AmountViewModel.h */,
+				196E4729248EC7BC00F004BC /* AmountViewModel.m */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -150,6 +161,16 @@
 				196E4721248D7B6700F004BC /* Service.plist */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		196E472B248ED23900F004BC /* PaymentMethods */ = {
+			isa = PBXGroup;
+			children = (
+				196E472C248ED25900F004BC /* PaymentMethodsViewController.h */,
+				196E472D248ED25900F004BC /* PaymentMethodsViewController.m */,
+				196E472E248ED25900F004BC /* PaymentMethodsViewController.xib */,
+			);
+			path = PaymentMethods;
 			sourceTree = "<group>";
 		};
 		C23A635136873895192C0632 /* Frameworks */ = {
@@ -230,6 +251,7 @@
 			files = (
 				196E471A248C7E3000F004BC /* AmountViewController.xib in Resources */,
 				196E4705248C59A200F004BC /* LaunchScreen.storyboard in Resources */,
+				196E4730248ED25900F004BC /* PaymentMethodsViewController.xib in Resources */,
 				196E4722248D7B6700F004BC /* Service.plist in Resources */,
 				196E4702248C59A200F004BC /* Assets.xcassets in Resources */,
 				196E4715248C7A2200F004BC /* HomeViewController.xib in Resources */,
@@ -289,8 +311,10 @@
 				196E46F7248C59A000F004BC /* AppDelegate.m in Sources */,
 				196E4708248C59A200F004BC /* main.m in Sources */,
 				196E471F248D6DCB00F004BC /* ServiceManager.m in Sources */,
+				196E472A248EC7BC00F004BC /* AmountViewModel.m in Sources */,
 				196E4727248DABFB00F004BC /* PaymentMethod.m in Sources */,
 				196E46FA248C59A000F004BC /* SceneDelegate.m in Sources */,
+				196E472F248ED25900F004BC /* PaymentMethodsViewController.m in Sources */,
 				196E4714248C7A2200F004BC /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

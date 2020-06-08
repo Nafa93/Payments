@@ -13,8 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *amount;
 
-@property (strong, nonatomic) NSNumber *currentAmount;
-
 @end
 
 @implementation AmountViewController
@@ -24,10 +22,12 @@
     
     _amount.delegate = self;
     
+    _amount.placeholder = [_amountViewModel getDisplayableAmount];
+    
     self.title = @"How much you wanna pay?";
 }
 
-- (IBAction)makePayment:(id)sender {
+- (IBAction)navigateToPaymentMethodsViewController:(id)sender {
     ServiceManager *sharedInstance = [ServiceManager sharedInstance];
     
     [sharedInstance getPaymentMethods:^(NSMutableArray * _Nonnull paymentMethods) {
@@ -37,7 +37,13 @@
     }];
 }
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+
+    [_amountViewModel updateCurrentAmount:string];
+    
+    _amount.text = [_amountViewModel getDisplayableAmount];
+    
+    return NO;
 }
 
 @end

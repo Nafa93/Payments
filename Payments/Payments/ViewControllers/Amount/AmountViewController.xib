@@ -29,7 +29,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="makePayment:" destination="-1" eventType="touchUpInside" id="DqN-gf-cgr"/>
+                        <action selector="navigateToPaymentMethodsViewController:" destination="-1" eventType="touchUpInside" id="DqN-gf-cgr"/>
                     </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Po6-Dw-OaV">

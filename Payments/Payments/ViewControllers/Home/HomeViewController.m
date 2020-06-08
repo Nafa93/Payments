@@ -21,11 +21,19 @@
     [super viewDidLoad];
     
     self.title = @"Home";
+    
     self.welcomeTitle.text = @"Welcome to payments, would you like go pay something?";
 }
 
-- (IBAction)startPayment:(id)sender {
-    [self.navigationController pushViewController:AmountViewController.new animated:YES];
+- (IBAction)navigateToAmountViewController:(id)sender {
+    
+    AmountViewController *amountViewController = [[AmountViewController alloc] init];
+    
+    AmountViewModel *amountViewModel = [[AmountViewModel alloc] init];
+    
+    amountViewController.amountViewModel = amountViewModel;
+    
+    [self.navigationController pushViewController:amountViewController animated:YES];
 }
 
 @end
