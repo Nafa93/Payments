@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PaymentMethodsViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PaymentMethodsViewController : UIViewController
+@interface PaymentMethodsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) PaymentMethodsViewModel *paymentMethodsViewModel;
 
 @end
 

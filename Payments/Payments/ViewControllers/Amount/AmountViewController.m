@@ -7,7 +7,7 @@
 //
 
 #import "AmountViewController.h"
-#import "ServiceManager.h"
+#import "PaymentMethodsViewController.h"
 
 @interface AmountViewController ()
 
@@ -28,13 +28,14 @@
 }
 
 - (IBAction)navigateToPaymentMethodsViewController:(id)sender {
-    ServiceManager *sharedInstance = [ServiceManager sharedInstance];
     
-    [sharedInstance getPaymentMethods:^(NSMutableArray * _Nonnull paymentMethods) {
-        for (PaymentMethod *paymentMethod in paymentMethods) {
-            NSLog(paymentMethod.name);
-        }
-    }];
+    PaymentMethodsViewController *paymentMethodsViewController = [[PaymentMethodsViewController alloc] init];
+    
+    PaymentMethodsViewModel * paymentMethodsViewModel = [[PaymentMethodsViewModel alloc] init];
+    
+    paymentMethodsViewController.paymentMethodsViewModel = paymentMethodsViewModel;
+    
+    [self.navigationController pushViewController:paymentMethodsViewController animated:YES];
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
