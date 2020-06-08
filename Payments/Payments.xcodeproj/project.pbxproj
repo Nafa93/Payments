@@ -18,6 +18,7 @@
 		196E471A248C7E3000F004BC /* AmountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196E4718248C7E3000F004BC /* AmountViewController.xib */; };
 		196E471F248D6DCB00F004BC /* ServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E471E248D6DCB00F004BC /* ServiceManager.m */; };
 		196E4722248D7B6700F004BC /* Service.plist in Resources */ = {isa = PBXBuildFile; fileRef = 196E4721248D7B6700F004BC /* Service.plist */; };
+		196E4727248DABFB00F004BC /* PaymentMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E4726248DABFB00F004BC /* PaymentMethod.m */; };
 		289FF9122C74911B001F68E3 /* Pods_Payments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100FCDB1149E355E6A774BDD /* Pods_Payments.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 		196E471D248D6DCB00F004BC /* ServiceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceManager.h; sourceTree = "<group>"; };
 		196E471E248D6DCB00F004BC /* ServiceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceManager.m; sourceTree = "<group>"; };
 		196E4721248D7B6700F004BC /* Service.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Service.plist; sourceTree = "<group>"; };
+		196E4723248D9D6400F004BC /* PaymentMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentMethod.h; sourceTree = "<group>"; };
+		196E4726248DABFB00F004BC /* PaymentMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentMethod.m; sourceTree = "<group>"; };
 		2BEC7D1BA78D34759D17B8F0 /* Pods-Payments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payments.release.xcconfig"; path = "Target Support Files/Pods-Payments/Pods-Payments.release.xcconfig"; sourceTree = "<group>"; };
 		D5A079FFF69097527E975BA9 /* Pods-Payments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payments.debug.xcconfig"; path = "Target Support Files/Pods-Payments/Pods-Payments.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +116,8 @@
 		196E4710248C79F900F004BC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				196E4723248D9D6400F004BC /* PaymentMethod.h */,
+				196E4726248DABFB00F004BC /* PaymentMethod.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				196E46F7248C59A000F004BC /* AppDelegate.m in Sources */,
 				196E4708248C59A200F004BC /* main.m in Sources */,
 				196E471F248D6DCB00F004BC /* ServiceManager.m in Sources */,
+				196E4727248DABFB00F004BC /* PaymentMethod.m in Sources */,
 				196E46FA248C59A000F004BC /* SceneDelegate.m in Sources */,
 				196E4714248C7A2200F004BC /* HomeViewController.m in Sources */,
 			);

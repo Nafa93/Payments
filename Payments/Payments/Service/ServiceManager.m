@@ -8,6 +8,7 @@
 
 #import "ServiceManager.h"
 #import "AFNetworking.h"
+#import "PaymentMethod.h"
 
 @implementation ServiceManager
 
@@ -42,15 +43,27 @@
     return self;
 }
 
--(void) getPaymentMethods {
+-(void) getPaymentMethods:(void (^)(NSMutableArray *paymentMethods)) completion {
     NSString *methodUrl = [_baseUrl stringByAppendingString:@"payment_methods"];
     
     NSDictionary *parameters = @{@"public_key": _publicKey};
     
+    NSMutableArray *paymentMethods = [[NSMutableArray alloc] init];
+    
     [_manager GET:methodUrl parameters:parameters headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         NSLog(@"Method in progress.");
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"Success baby.");
+        
+        for (NSDictionary *item in responseObject) {
+
+            PaymentMethod *paymentMethod = [[PaymentMethod alloc] initWithData:item];
+            
+            [paymentMethods addObject:paymentMethod];
+            
+        }
+        
+        completion(paymentMethods);
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"Failed :(");
     }];

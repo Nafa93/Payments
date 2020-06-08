@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
+#import "PaymentMethod.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
 
 + (id) sharedInstance;
-- (void) getPaymentMethods;
+- (void) getPaymentMethods:(void (^)(NSMutableArray *paymentMethods)) completion;
 
 @end
 

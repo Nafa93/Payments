@@ -30,7 +30,11 @@
 - (IBAction)makePayment:(id)sender {
     ServiceManager *sharedInstance = [ServiceManager sharedInstance];
     
-    [sharedInstance getPaymentMethods];
+    [sharedInstance getPaymentMethods:^(NSMutableArray * _Nonnull paymentMethods) {
+        for (PaymentMethod *paymentMethod in paymentMethods) {
+            NSLog(paymentMethod.name);
+        }
+    }];
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
