@@ -27,7 +27,29 @@
     self.title = @"Monto a Pagar";
 }
 
+-(void)displayErrorAlert {
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:@"Error"
+                                 message:@"Debes ingresar un valor para continuar"
+                                 preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction* okButton = [UIAlertAction
+                               actionWithTitle:@"Ok"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action) {}];
+
+    [alert addAction:okButton];
+
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 - (IBAction)navigateToPaymentMethodsViewController:(id)sender {
+    
+    if (_amountViewModel.selectedAmount == 0) {
+        [self displayErrorAlert];
+        
+        return;
+    }
     
     PaymentMethodsViewController *paymentMethodsViewController = [[PaymentMethodsViewController alloc] init];
     

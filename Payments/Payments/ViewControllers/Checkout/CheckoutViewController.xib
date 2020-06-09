@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckoutViewController">
+            <connections>
+                <outlet property="cardIssuer" destination="1aO-oC-XeS" id="Yit-HE-zG1"/>
+                <outlet property="installment" destination="iYO-AP-fBM" id="i37-Ah-8Oz"/>
+                <outlet property="paymentMethod" destination="71t-nT-Psc" id="KYh-7V-di0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71t-nT-Psc" userLabel="PaymentMethod">
+                    <rect key="frame" x="186" y="341.5" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aO-oC-XeS" userLabel="CardIssuer">
+                    <rect key="frame" x="186" y="437.5" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYO-AP-fBM" userLabel="Installment">
+                    <rect key="frame" x="186" y="533.5" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNx-th-szB" userLabel="GoBackHome">
+                    <rect key="frame" x="111" y="718" width="192" height="48"/>
+                    <color key="backgroundColor" red="0.0" green="0.34509803921568627" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="192" id="qwR-Tu-Q8c"/>
+                        <constraint firstAttribute="height" constant="48" id="uL5-hR-Qab"/>
+                    </constraints>
+                    <state key="normal" title="Volver al Inicio">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="goBackToHome:" destination="-1" eventType="touchUpInside" id="udk-hl-ojG"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="KNx-th-szB" secondAttribute="bottom" constant="96" id="1d5-gv-GWm"/>
+                <constraint firstItem="71t-nT-Psc" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-96" id="5cF-0Z-Vej"/>
+                <constraint firstItem="1aO-oC-XeS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="C8j-MW-2H0"/>
+                <constraint firstItem="71t-nT-Psc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="IWd-SH-OoW"/>
+                <constraint firstItem="1aO-oC-XeS" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="LsZ-za-vcZ"/>
+                <constraint firstItem="KNx-th-szB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="V0r-vo-etn"/>
+                <constraint firstItem="iYO-AP-fBM" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="96" id="eFQ-iJ-jTl"/>
+                <constraint firstItem="iYO-AP-fBM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="noj-BW-jJs"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="141" y="86"/>
+        </view>
+    </objects>
+</document>

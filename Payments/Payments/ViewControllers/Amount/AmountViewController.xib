@@ -19,21 +19,30 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooh-n3-O19">
-                    <rect key="frame" x="159" y="561" width="96" height="96"/>
-                    <color key="backgroundColor" red="0.078126527370000004" green="0.014849991539999999" blue="0.43698388339999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <rect key="frame" x="111" y="718" width="192" height="48"/>
+                    <color key="backgroundColor" red="0.0" green="0.34509803921568627" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="96" id="FDi-mo-Rhk"/>
-                        <constraint firstAttribute="width" constant="96" id="g8y-nF-7So"/>
+                        <constraint firstAttribute="height" constant="48" id="Kkk-eg-oMA"/>
+                        <constraint firstAttribute="width" constant="192" id="oT8-gw-Guw"/>
                     </constraints>
-                    <state key="normal" title="Pay">
+                    <state key="normal" title="Ir a Metodos de Pago">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="navigateToPaymentMethodsViewController:" destination="-1" eventType="touchUpInside" id="DqN-gf-cgr"/>
                     </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Po6-Dw-OaV">
-                    <rect key="frame" x="191" y="431" width="32" height="34"/>
+                    <rect key="frame" x="111" y="424" width="192" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="KDR-59-FuD"/>
+                        <constraint firstAttribute="width" constant="192" id="frR-Pg-ADY"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
@@ -43,7 +52,7 @@
                 <constraint firstItem="Po6-Dw-OaV" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="1Yu-nU-5Oy"/>
                 <constraint firstItem="ooh-n3-O19" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OwT-Vs-EvN"/>
                 <constraint firstItem="Po6-Dw-OaV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="YRS-0I-scy"/>
-                <constraint firstItem="ooh-n3-O19" firstAttribute="top" secondItem="Po6-Dw-OaV" secondAttribute="bottom" constant="96" id="ntA-U0-LaS"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="ooh-n3-O19" secondAttribute="bottom" constant="96" id="czd-MR-Ca3"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="141" y="137"/>

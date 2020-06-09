@@ -32,7 +32,7 @@
     [_cardIssuersViewModel getCardIssuers];
 }
 
--(void) navigateToInstallmentsViewController:(NSString *) issuerId {
+-(void) navigateToInstallmentsViewController:(NSString *) issuerId :(NSString *) cardIssuer {
     InstallmentsViewController *installmentsViewController = [[InstallmentsViewController alloc] init];
     
     InstallmentsViewModel * installmentsViewModel = [[InstallmentsViewModel alloc] init];
@@ -42,6 +42,10 @@
     installmentsViewModel.issuerId = issuerId;
     
     installmentsViewModel.selectedAmount = _cardIssuersViewModel.selectedAmount;
+    
+    installmentsViewModel.paymentMethod = _cardIssuersViewModel.paymentMethod;
+    
+    installmentsViewModel.cardIssuer = cardIssuer;
     
     installmentsViewController.installmentsViewModel = installmentsViewModel;
     
@@ -72,7 +76,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     CardIssuer *cardIssuer = (CardIssuer *)[_cardIssuersViewModel.cardIssuers objectAtIndex:indexPath.row];
     
-    [self navigateToInstallmentsViewController:cardIssuer.cardIssuerId];
+    [self navigateToInstallmentsViewController:cardIssuer.cardIssuerId:cardIssuer.name];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

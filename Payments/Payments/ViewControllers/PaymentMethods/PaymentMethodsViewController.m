@@ -31,12 +31,14 @@
     [_paymentMethodsViewModel getPaymentMethods];
 }
 
--(void) navigateToCardIssuersViewController:(NSString *) paymentMethodId {
+-(void) navigateToCardIssuersViewController:(NSString *) paymentMethodId :(NSString *) paymentMethod {
     CardIssuersViewController *cardIssuersViewController = [[CardIssuersViewController alloc] init];
     
     CardIssuersViewModel * cardIssuersViewModel = [[CardIssuersViewModel alloc] initWithPaymentMethodId:paymentMethodId];
     
     cardIssuersViewModel.selectedAmount = _paymentMethodsViewModel.selectedAmount;
+    
+    cardIssuersViewModel.paymentMethod = paymentMethod;
     
     cardIssuersViewController.cardIssuersViewModel = cardIssuersViewModel;
     
@@ -67,7 +69,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PaymentMethod *paymentMethod = (PaymentMethod *)[_paymentMethodsViewModel.paymentMethods objectAtIndex:indexPath.row];
     
-    [self navigateToCardIssuersViewController:paymentMethod.paymentMethodId];
+    [self navigateToCardIssuersViewController:paymentMethod.paymentMethodId:paymentMethod.name];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

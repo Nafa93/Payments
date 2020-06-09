@@ -7,6 +7,8 @@
 //
 
 #import "InstallmentsViewController.h"
+#import "CheckoutViewController.h"
+#import "CheckoutViewModel.h"
 #import "InstallmentsTableViewCell.h"
 #import "Installment.h"
 #import "PayerCost.h"
@@ -30,14 +32,20 @@
     
 }
 
--(void) navigateToCheckout:(NSString *) issuerId {
-//    CheckoutViewController *checkoutViewController = [[CheckoutViewController alloc] init];
-//
-//    CheckoutViewModel *checkoutViewModel = [[CheckoutViewModel alloc] init];
-//
-//    checkoutViewController.checkoutViewModel = checkoutViewModel;
-//
-//    [self.navigationController pushViewController:checkoutViewController animated:YES];
+-(void) navigateToCheckout:(NSString *) issuerId :(NSString *) chosenInstallment {
+    CheckoutViewController *checkoutViewController = [[CheckoutViewController alloc] init];
+
+    CheckoutViewModel *checkoutViewModel = [[CheckoutViewModel alloc] init];
+    
+    checkoutViewModel.cardIssuer = _installmentsViewModel.cardIssuer;
+    
+    checkoutViewModel.paymentMethod = _installmentsViewModel.paymentMethod;
+    
+    checkoutViewModel.installment = chosenInstallment;
+
+    checkoutViewController.checkoutViewModel = checkoutViewModel;
+
+    [self.navigationController pushViewController:checkoutViewController animated:YES];
 }
 
 - (void)installmentsFetched:(InstallmentsViewModel *)sender {
@@ -62,7 +70,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self navigateToCheckout:self.installmentsViewModel.issuerId];
+    PayerCost *payerCost = (PayerCost *)[_installmentsViewModel.installment.payerCosts objectAtIndex:indexPath.row];
+    
+    [self navigateToCheckout:self.installmentsViewModel.issuerId:payerCost.recommendedMessage];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

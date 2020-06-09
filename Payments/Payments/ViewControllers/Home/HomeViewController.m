@@ -22,7 +22,19 @@
     
     self.title = @"Inicio";
     
-    self.welcomeTitle.text = @"Welcome to payments, would you like go pay something?";
+    self.welcomeTitle.text = @"Bienvenido a GeoPagos";
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.navigationController.navigationBar.tintColor = UIColor.whiteColor;
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: UIColor.whiteColor}];
+    
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.03 green:0.34 blue:0.8 alpha:1.0];
+    
 }
 
 - (IBAction)navigateToAmountViewController:(id)sender {

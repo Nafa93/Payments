@@ -29,6 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString *issuerId;
 
+@property (nonatomic, strong) NSString *paymentMethod;
+
+@property (nonatomic, strong) NSString *cardIssuer;
+
 @property (nonatomic, assign) double selectedAmount;
 
 -(void) getInstallments;

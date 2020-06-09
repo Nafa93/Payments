@@ -19,19 +19,22 @@
         
         NSMutableArray *array = data.mutableCopy;
         
-        NSDictionary *issuer = [(NSDictionary *)[array objectAtIndex:0] objectForKey:@"issuer"];
-        
-        _name = [issuer objectForKey:@"name"];
-        _issuerId = [issuer objectForKey:@"id"];
-        _thumbnail = [issuer objectForKey:@"thumbnail"];
-        
-        NSDictionary *payerCosts = [(NSDictionary *)[array objectAtIndex:0] objectForKey:@"payer_costs"];
-        
-        for (NSDictionary *payerCostDictionary in payerCosts) {
-            PayerCost *payerCost = [[PayerCost alloc] initWithData:payerCostDictionary];
+        if (array.count > 0) {
+            NSDictionary *issuer = [(NSDictionary *)[array objectAtIndex:0] objectForKey:@"issuer"];
             
-            [_payerCosts addObject:payerCost];
+            _name = [issuer objectForKey:@"name"];
+            _issuerId = [issuer objectForKey:@"id"];
+            _thumbnail = [issuer objectForKey:@"thumbnail"];
+            
+            NSDictionary *payerCosts = [(NSDictionary *)[array objectAtIndex:0] objectForKey:@"payer_costs"];
+            
+            for (NSDictionary *payerCostDictionary in payerCosts) {
+                PayerCost *payerCost = [[PayerCost alloc] initWithData:payerCostDictionary];
+                
+                [_payerCosts addObject:payerCost];
+            }
         }
+        
     }
     return self;
 }
