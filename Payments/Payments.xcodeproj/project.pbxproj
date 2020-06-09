@@ -31,6 +31,9 @@
 		196E474B248F143800F004BC /* CardIssuer.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E474A248F143800F004BC /* CardIssuer.m */; };
 		196E474F248F43C900F004BC /* CardIssuersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E474D248F43C900F004BC /* CardIssuersTableViewCell.m */; };
 		196E4750248F43C900F004BC /* CardIssuersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196E474E248F43C900F004BC /* CardIssuersTableViewCell.xib */; };
+		196E4755248F47B700F004BC /* InstallmentsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E4754248F47B700F004BC /* InstallmentsViewModel.m */; };
+		196E4759248F47CD00F004BC /* InstallmentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E4757248F47CD00F004BC /* InstallmentsViewController.m */; };
+		196E475A248F47CD00F004BC /* InstallmentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196E4758248F47CD00F004BC /* InstallmentsViewController.xib */; };
 		289FF9122C74911B001F68E3 /* Pods_Payments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100FCDB1149E355E6A774BDD /* Pods_Payments.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +79,11 @@
 		196E474C248F43C900F004BC /* CardIssuersTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardIssuersTableViewCell.h; sourceTree = "<group>"; };
 		196E474D248F43C900F004BC /* CardIssuersTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardIssuersTableViewCell.m; sourceTree = "<group>"; };
 		196E474E248F43C900F004BC /* CardIssuersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardIssuersTableViewCell.xib; sourceTree = "<group>"; };
+		196E4753248F47B700F004BC /* InstallmentsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstallmentsViewModel.h; sourceTree = "<group>"; };
+		196E4754248F47B700F004BC /* InstallmentsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstallmentsViewModel.m; sourceTree = "<group>"; };
+		196E4756248F47CD00F004BC /* InstallmentsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstallmentsViewController.h; sourceTree = "<group>"; };
+		196E4757248F47CD00F004BC /* InstallmentsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstallmentsViewController.m; sourceTree = "<group>"; };
+		196E4758248F47CD00F004BC /* InstallmentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstallmentsViewController.xib; sourceTree = "<group>"; };
 		2BEC7D1BA78D34759D17B8F0 /* Pods-Payments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payments.release.xcconfig"; path = "Target Support Files/Pods-Payments/Pods-Payments.release.xcconfig"; sourceTree = "<group>"; };
 		D5A079FFF69097527E975BA9 /* Pods-Payments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payments.debug.xcconfig"; path = "Target Support Files/Pods-Payments/Pods-Payments.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +140,7 @@
 		196E470E248C79E000F004BC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				196E4752248F479A00F004BC /* Installments */,
 				196E473D248F0D4B00F004BC /* CardIssuers */,
 				196E472B248ED23900F004BC /* PaymentMethods */,
 				196E471C248D660D00F004BC /* Amount */,
@@ -143,6 +152,7 @@
 		196E470F248C79F000F004BC /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				196E4751248F478800F004BC /* Installments */,
 				196E4745248F0E8600F004BC /* CardIssuers */,
 				196E4744248F0DDB00F004BC /* PaymentMethods */,
 				196E4743248F0DC600F004BC /* Amount */,
@@ -244,6 +254,25 @@
 			path = CardIssuers;
 			sourceTree = "<group>";
 		};
+		196E4751248F478800F004BC /* Installments */ = {
+			isa = PBXGroup;
+			children = (
+				196E4753248F47B700F004BC /* InstallmentsViewModel.h */,
+				196E4754248F47B700F004BC /* InstallmentsViewModel.m */,
+			);
+			path = Installments;
+			sourceTree = "<group>";
+		};
+		196E4752248F479A00F004BC /* Installments */ = {
+			isa = PBXGroup;
+			children = (
+				196E4756248F47CD00F004BC /* InstallmentsViewController.h */,
+				196E4757248F47CD00F004BC /* InstallmentsViewController.m */,
+				196E4758248F47CD00F004BC /* InstallmentsViewController.xib */,
+			);
+			path = Installments;
+			sourceTree = "<group>";
+		};
 		C23A635136873895192C0632 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +351,7 @@
 			files = (
 				196E4735248ED2F700F004BC /* PaymentMethodsTableViewCell.xib in Resources */,
 				196E471A248C7E3000F004BC /* AmountViewController.xib in Resources */,
+				196E475A248F47CD00F004BC /* InstallmentsViewController.xib in Resources */,
 				196E4705248C59A200F004BC /* LaunchScreen.storyboard in Resources */,
 				196E4730248ED25900F004BC /* PaymentMethodsViewController.xib in Resources */,
 				196E4722248D7B6700F004BC /* Service.plist in Resources */,
@@ -392,7 +422,9 @@
 				196E4727248DABFB00F004BC /* PaymentMethod.m in Sources */,
 				196E4738248F058800F004BC /* PaymentMethodsViewModel.m in Sources */,
 				196E474B248F143800F004BC /* CardIssuer.m in Sources */,
+				196E4759248F47CD00F004BC /* InstallmentsViewController.m in Sources */,
 				196E474F248F43C900F004BC /* CardIssuersTableViewCell.m in Sources */,
+				196E4755248F47B700F004BC /* InstallmentsViewModel.m in Sources */,
 				196E46FA248C59A000F004BC /* SceneDelegate.m in Sources */,
 				196E472F248ED25900F004BC /* PaymentMethodsViewController.m in Sources */,
 				196E4714248C7A2200F004BC /* HomeViewController.m in Sources */,
