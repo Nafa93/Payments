@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(id) sharedInstance;
 -(void) getPaymentMethods:(void (^)(NSMutableArray *paymentMethods)) completion;
--(void) getCardIssuers:(NSString *) paymentMethodId: (void (^)(NSMutableArray *cardIssuers)) completion;
+-(void) getCardIssuers: (NSString *) paymentMethodId: (void (^)(NSMutableArray *cardIssuers)) completion;
 
 @end
 

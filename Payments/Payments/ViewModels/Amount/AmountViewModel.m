@@ -33,9 +33,9 @@
     
     [formatter setNumberStyle: NSNumberFormatterCurrencyStyle];
     
-    double amountWithDecimals = _currentAmount / 100.00;
+    _selectedAmount = _currentAmount / 100.00;
     
-    NSString *formattedNumber = [formatter stringFromNumber:[[NSNumber alloc] initWithDouble:amountWithDecimals]];
+    NSString *formattedNumber = [formatter stringFromNumber:[[NSNumber alloc] initWithDouble:_selectedAmount]];
     
     return formattedNumber;
 }

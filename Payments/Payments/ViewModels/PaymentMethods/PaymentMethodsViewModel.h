@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PaymentMethodsViewModel : NSObject
 
 @property (nonatomic, strong) NSMutableArray *paymentMethods;
+@property (nonatomic, assign) double selectedAmount;
 
 @property (nonatomic, weak) id <PaymentMethodsDelegate> delegate;
 

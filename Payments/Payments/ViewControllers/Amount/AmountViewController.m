@@ -33,6 +33,8 @@
     
     PaymentMethodsViewModel * paymentMethodsViewModel = [[PaymentMethodsViewModel alloc] init];
     
+    paymentMethodsViewModel.selectedAmount = [_amountViewModel selectedAmount];
+    
     paymentMethodsViewController.paymentMethodsViewModel = paymentMethodsViewModel;
     
     [self.navigationController pushViewController:paymentMethodsViewController animated:YES];

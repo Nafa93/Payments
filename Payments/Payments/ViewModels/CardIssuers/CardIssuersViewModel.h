@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id <CardIssuersDelegate> delegate;
 @property (nonatomic, strong) NSString *paymentMethodId;
 @property (nonatomic, strong) NSMutableArray *cardIssuers;
+@property (nonatomic, assign) double selectedAmount;
 
 -(id)initWithPaymentMethodId: (NSString *)paymentMethodId;
 

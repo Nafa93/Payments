@@ -11,7 +11,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CardIssuersViewController : UIViewController<CardIssuersDelegate>
+@interface CardIssuersViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, CardIssuersDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) CardIssuersViewModel *cardIssuersViewModel;
 

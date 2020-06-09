@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface AmountViewModel : NSObject
 
 @property (nonatomic, assign) double currentAmount;
+@property (nonatomic, assign) double selectedAmount;
 
 - (void) updateCurrentAmount: (NSString *) input;
 

@@ -29,6 +29,8 @@
 		196E4742248F0D6A00F004BC /* CardIssuersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196E4740248F0D6A00F004BC /* CardIssuersViewController.xib */; };
 		196E4748248F0E9D00F004BC /* CardIssuersViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E4747248F0E9D00F004BC /* CardIssuersViewModel.m */; };
 		196E474B248F143800F004BC /* CardIssuer.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E474A248F143800F004BC /* CardIssuer.m */; };
+		196E474F248F43C900F004BC /* CardIssuersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E474D248F43C900F004BC /* CardIssuersTableViewCell.m */; };
+		196E4750248F43C900F004BC /* CardIssuersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196E474E248F43C900F004BC /* CardIssuersTableViewCell.xib */; };
 		289FF9122C74911B001F68E3 /* Pods_Payments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100FCDB1149E355E6A774BDD /* Pods_Payments.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,9 @@
 		196E4747248F0E9D00F004BC /* CardIssuersViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardIssuersViewModel.m; sourceTree = "<group>"; };
 		196E4749248F143800F004BC /* CardIssuer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardIssuer.h; sourceTree = "<group>"; };
 		196E474A248F143800F004BC /* CardIssuer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardIssuer.m; sourceTree = "<group>"; };
+		196E474C248F43C900F004BC /* CardIssuersTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardIssuersTableViewCell.h; sourceTree = "<group>"; };
+		196E474D248F43C900F004BC /* CardIssuersTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardIssuersTableViewCell.m; sourceTree = "<group>"; };
+		196E474E248F43C900F004BC /* CardIssuersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardIssuersTableViewCell.xib; sourceTree = "<group>"; };
 		2BEC7D1BA78D34759D17B8F0 /* Pods-Payments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payments.release.xcconfig"; path = "Target Support Files/Pods-Payments/Pods-Payments.release.xcconfig"; sourceTree = "<group>"; };
 		D5A079FFF69097527E975BA9 /* Pods-Payments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payments.debug.xcconfig"; path = "Target Support Files/Pods-Payments/Pods-Payments.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,6 +210,9 @@
 				196E473E248F0D6A00F004BC /* CardIssuersViewController.h */,
 				196E473F248F0D6A00F004BC /* CardIssuersViewController.m */,
 				196E4740248F0D6A00F004BC /* CardIssuersViewController.xib */,
+				196E474C248F43C900F004BC /* CardIssuersTableViewCell.h */,
+				196E474D248F43C900F004BC /* CardIssuersTableViewCell.m */,
+				196E474E248F43C900F004BC /* CardIssuersTableViewCell.xib */,
 			);
 			path = CardIssuers;
 			sourceTree = "<group>";
@@ -320,6 +328,7 @@
 				196E4742248F0D6A00F004BC /* CardIssuersViewController.xib in Resources */,
 				196E4702248C59A200F004BC /* Assets.xcassets in Resources */,
 				196E4715248C7A2200F004BC /* HomeViewController.xib in Resources */,
+				196E4750248F43C900F004BC /* CardIssuersTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +392,7 @@
 				196E4727248DABFB00F004BC /* PaymentMethod.m in Sources */,
 				196E4738248F058800F004BC /* PaymentMethodsViewModel.m in Sources */,
 				196E474B248F143800F004BC /* CardIssuer.m in Sources */,
+				196E474F248F43C900F004BC /* CardIssuersTableViewCell.m in Sources */,
 				196E46FA248C59A000F004BC /* SceneDelegate.m in Sources */,
 				196E472F248ED25900F004BC /* PaymentMethodsViewController.m in Sources */,
 				196E4714248C7A2200F004BC /* HomeViewController.m in Sources */,

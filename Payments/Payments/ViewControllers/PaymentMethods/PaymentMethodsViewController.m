@@ -34,6 +34,8 @@
     
     CardIssuersViewModel * cardIssuersViewModel = [[CardIssuersViewModel alloc] initWithPaymentMethodId:paymentMethodId];
     
+    cardIssuersViewModel.selectedAmount = _paymentMethodsViewModel.selectedAmount;
+    
     cardIssuersViewController.cardIssuersViewModel = cardIssuersViewModel;
     
     [self.navigationController pushViewController:cardIssuersViewController animated:YES];
@@ -61,15 +63,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"PaymentMethodsTableViewCell";
-    
-    PaymentMethodsTableViewCell *cell = (PaymentMethodsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PaymentMethodsTableViewCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-    }
-    
     PaymentMethod *paymentMethod = (PaymentMethod *)[_paymentMethodsViewModel.paymentMethods objectAtIndex:indexPath.row];
     
     [self navigateToCardIssuersViewController:paymentMethod.paymentMethodId];
@@ -82,7 +75,5 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _paymentMethodsViewModel.paymentMethods.count;
 }
-
-
 
 @end
