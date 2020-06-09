@@ -22,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"Metodos de Pago";
+    
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _paymentMethodsViewModel.delegate = self;

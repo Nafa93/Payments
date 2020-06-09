@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"Emisores de Tarjetas";
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     _cardIssuersViewModel.delegate = self;

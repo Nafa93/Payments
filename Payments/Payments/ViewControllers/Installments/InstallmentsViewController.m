@@ -20,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"Cuotas";
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.installmentsViewModel.delegate = self;

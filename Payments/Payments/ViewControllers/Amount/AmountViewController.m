@@ -24,7 +24,7 @@
     
     _amount.placeholder = [_amountViewModel getDisplayableAmount];
     
-    self.title = @"How much you wanna pay?";
+    self.title = @"Monto a Pagar";
 }
 
 - (IBAction)navigateToPaymentMethodsViewController:(id)sender {

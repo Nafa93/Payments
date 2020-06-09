@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Home";
+    self.title = @"Inicio";
     
     self.welcomeTitle.text = @"Welcome to payments, would you like go pay something?";
 }
