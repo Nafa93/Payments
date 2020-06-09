@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "InstallmentsViewModel.h"
 #import "UIViewController+Alert.h"
+#import "BaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface InstallmentsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, InstallmentsDelegate>
+@interface InstallmentsViewController : BaseViewController<UITableViewDelegate, UITableViewDataSource, InstallmentsDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

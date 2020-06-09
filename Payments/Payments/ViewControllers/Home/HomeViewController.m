@@ -23,7 +23,6 @@
     self.title = @"Inicio";
     
     self.welcomeTitle.text = @"Bienvenido a GeoPagos";
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {

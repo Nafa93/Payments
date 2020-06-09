@@ -28,6 +28,9 @@
     _tableView.dataSource = self;
     _paymentMethodsViewModel.delegate = self;
     
+    self.tableView.hidden = YES;
+    [self startLoadingSpinner];
+
     [_paymentMethodsViewModel getPaymentMethods];
 }
 
@@ -46,6 +49,9 @@
 }
 
 - (void)paymentMethodsFetched:(PaymentMethodsViewModel *)sender {
+    self.tableView.hidden = NO;
+    [self stopLoadingSpinner];
+    
     if (_paymentMethodsViewModel.paymentMethods.count == 0) {
         [self showAlertWithTitle:@"Error" andMessage:@"Por el momento no hay informacion para mostrar." buttonTitle:@"Volver atras" andHandler:^(UIAlertAction *action) {
             [self.navigationController popViewControllerAnimated:true];
@@ -58,6 +64,9 @@
 }
 
 - (void)paymentMethodsFailed:(PaymentMethodsViewModel *)sender error:(NSString *)error {
+    self.tableView.hidden = NO;
+    [self stopLoadingSpinner];
+    
     [self showAlertWithTitle:@"Error" andMessage:error buttonTitle:@"Volver atras" andHandler:^(UIAlertAction *action) {
         [self.navigationController popViewControllerAnimated:true];
     }];

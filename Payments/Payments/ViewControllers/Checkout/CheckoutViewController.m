@@ -17,16 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"Pago Finalizado";
+    
+    self.navigationItem.hidesBackButton = YES;
+    
     _paymentMethod.text = _checkoutViewModel.paymentMethod;
     
     _cardIssuer.text = _checkoutViewModel.cardIssuer;
     
     _installment.text = _checkoutViewModel.installment;
-    
 }
 
 - (IBAction)goBackToHome:(id)sender {
-    [self.navigationController popToRootViewControllerAnimated:NO];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

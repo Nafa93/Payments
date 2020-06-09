@@ -28,6 +28,9 @@
     self.tableView.dataSource = self;
     self.installmentsViewModel.delegate = self;
     
+    self.tableView.hidden = YES;
+    [self startLoadingSpinner];
+    
     [_installmentsViewModel getInstallments];
     
 }
@@ -49,6 +52,10 @@
 }
 
 - (void)installmentsFetched:(InstallmentsViewModel *)sender {
+    
+    self.tableView.hidden = NO;
+    [self stopLoadingSpinner];
+    
     if (_installmentsViewModel.installment.payerCosts.count == 0) {
         [self showAlertWithTitle:@"Error" andMessage:@"Por el momento no hay informacion para mostrar." buttonTitle:@"Volver atras" andHandler:^(UIAlertAction *action) {
             [self.navigationController popViewControllerAnimated:true];
@@ -61,6 +68,9 @@
 }
 
 - (void)installmentsFailed:(InstallmentsViewModel *)sender error:(NSString *)error {
+    self.tableView.hidden = NO;
+    [self stopLoadingSpinner];
+    
     [self showAlertWithTitle:@"Error" andMessage:error buttonTitle:@"Volver atras" andHandler:^(UIAlertAction *action) {
         [self.navigationController popViewControllerAnimated:true];
     }];

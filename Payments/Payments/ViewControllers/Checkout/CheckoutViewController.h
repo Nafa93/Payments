@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CheckoutViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *finalMessage;
 @property (weak, nonatomic) IBOutlet UILabel *paymentMethod;
 @property (weak, nonatomic) IBOutlet UILabel *cardIssuer;
 @property (weak, nonatomic) IBOutlet UILabel *installment;
