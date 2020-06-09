@@ -10,9 +10,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class PaymentMethodsViewModel;
+
+@protocol PaymentMethodsDelegate <NSObject>
+
+- (void) paymentMethodsFetched: (PaymentMethodsViewModel *) sender;
+
+@end
+
 @interface PaymentMethodsViewModel : NSObject
 
 @property (nonatomic, strong) NSMutableArray *paymentMethods;
+
+@property (nonatomic, weak) id <PaymentMethodsDelegate> delegate;
 
 - (void) getPaymentMethods;
 

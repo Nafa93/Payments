@@ -23,8 +23,13 @@
     
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _paymentMethodsViewModel.delegate = self;
     
     [_paymentMethodsViewModel getPaymentMethods];
+}
+
+- (void)paymentMethodsFetched:(PaymentMethodsViewModel *)sender {
+    [self.tableView reloadData];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

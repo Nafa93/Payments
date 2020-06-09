@@ -11,11 +11,15 @@
 
 @implementation PaymentMethodsViewModel
 
+@synthesize delegate;
+
 -(void) getPaymentMethods {
     ServiceManager *sharedInstance = [ServiceManager sharedInstance];
 
     [sharedInstance getPaymentMethods:^(NSMutableArray * _Nonnull paymentMethods) {
         self.paymentMethods = paymentMethods;
+        
+        [self.delegate paymentMethodsFetched:self];
     }];
 }
 

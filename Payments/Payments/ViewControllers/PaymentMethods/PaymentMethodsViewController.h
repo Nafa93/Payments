@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PaymentMethodsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface PaymentMethodsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, PaymentMethodsDelegate>
 
 @property (nonatomic, strong) PaymentMethodsViewModel *paymentMethodsViewModel;
 
