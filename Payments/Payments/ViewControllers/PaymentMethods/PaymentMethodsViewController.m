@@ -7,6 +7,7 @@
 //
 
 #import "PaymentMethodsViewController.h"
+#import "CardIssuersViewController.h"
 #import "PaymentMethodsTableViewCell.h"
 #import "PaymentMethod.h"
 
@@ -26,6 +27,16 @@
     _paymentMethodsViewModel.delegate = self;
     
     [_paymentMethodsViewModel getPaymentMethods];
+}
+
+-(void) navigateToCardIssuersViewController:(NSString *) paymentMethodId {
+    CardIssuersViewController *cardIssuersViewController = [[CardIssuersViewController alloc] init];
+    
+    CardIssuersViewModel * cardIssuersViewModel = [[CardIssuersViewModel alloc] initWithPaymentMethodId:paymentMethodId];
+    
+    cardIssuersViewController.cardIssuersViewModel = cardIssuersViewModel;
+    
+    [self.navigationController pushViewController:cardIssuersViewController animated:YES];
 }
 
 - (void)paymentMethodsFetched:(PaymentMethodsViewModel *)sender {
@@ -49,6 +60,21 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"PaymentMethodsTableViewCell";
+    
+    PaymentMethodsTableViewCell *cell = (PaymentMethodsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (cell == nil) {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PaymentMethodsTableViewCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    PaymentMethod *paymentMethod = (PaymentMethod *)[_paymentMethodsViewModel.paymentMethods objectAtIndex:indexPath.row];
+    
+    [self navigateToCardIssuersViewController:paymentMethod.paymentMethodId];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -56,5 +82,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _paymentMethodsViewModel.paymentMethods.count;
 }
+
+
 
 @end

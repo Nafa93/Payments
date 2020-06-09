@@ -9,6 +9,7 @@
 #import "ServiceManager.h"
 #import "AFNetworking.h"
 #import "PaymentMethod.h"
+#import "CardIssuer.h"
 
 @implementation ServiceManager
 
@@ -63,6 +64,32 @@
         }
         
         completion(paymentMethods);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"Failed :(");
+    }];
+}
+
+-(void) getCardIssuers:(NSString *) paymentMethodId :(void (^)(NSMutableArray *cardIssuers)) completion {
+    NSString *methodUrl = [_baseUrl stringByAppendingString:@"payment_methods/card_issuers"];
+    
+    NSDictionary *parameters = @{@"public_key": _publicKey, @"payment_method_id": paymentMethodId};
+    
+    NSMutableArray *cardIssuers = [[NSMutableArray alloc] init];
+    
+    [_manager GET:methodUrl parameters:parameters headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        NSLog(@"Method in progress.");
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        for (NSDictionary *item in responseObject) {
+
+            CardIssuer *cardIssuer = [[CardIssuer alloc] initWithData:item];
+            
+            [cardIssuers addObject:cardIssuer];
+            
+        }
+        
+        completion(cardIssuers);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"Failed :(");

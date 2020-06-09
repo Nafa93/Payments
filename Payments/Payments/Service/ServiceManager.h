@@ -18,8 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *publicKey;
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
 
-+ (id) sharedInstance;
-- (void) getPaymentMethods:(void (^)(NSMutableArray *paymentMethods)) completion;
++(id) sharedInstance;
+-(void) getPaymentMethods:(void (^)(NSMutableArray *paymentMethods)) completion;
+-(void) getCardIssuers:(NSString *) paymentMethodId: (void (^)(NSMutableArray *cardIssuers)) completion;
 
 @end
 
