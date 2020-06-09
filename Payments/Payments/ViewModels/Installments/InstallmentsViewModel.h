@@ -10,7 +10,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class InstallmentsViewModel;
+
+@protocol InstallmentsDelegate <NSObject>
+
+- (void) installmentsFetched: (InstallmentsViewModel *) sender;
+
+@end
+
 @interface InstallmentsViewModel : NSObject
+
+@property (nonatomic, weak) id <InstallmentsDelegate> delegate;
+
+@property (nonatomic, strong) NSMutableArray *installments;
 
 @end
 

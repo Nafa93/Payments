@@ -11,7 +11,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface InstallmentsViewController : UIViewController
+@interface InstallmentsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, InstallmentsDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) InstallmentsViewModel *installmentsViewModel;
 
