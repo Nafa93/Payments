@@ -9,6 +9,7 @@
 #import "InstallmentsViewController.h"
 #import "InstallmentsTableViewCell.h"
 #import "Installment.h"
+#import "PayerCost.h"
 
 @interface InstallmentsViewController ()
 
@@ -22,6 +23,8 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.installmentsViewModel.delegate = self;
+    
+    [_installmentsViewModel getInstallments];
     
 }
 
@@ -49,17 +52,15 @@
         cell = [nib objectAtIndex:0];
     }
     
-    Installment *installment = (Installment *)[_installmentsViewModel.installments objectAtIndex:indexPath.row];
+    PayerCost *payerCost = (PayerCost *)[_installmentsViewModel.installment.payerCosts objectAtIndex:indexPath.row];
     
-    cell.name.text = installment.name;
+    cell.name.text = payerCost.recommendedMessage;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Installment *installment = (Installment *)[_installmentsViewModel.installments objectAtIndex:indexPath.row];
-    
-    [self navigateToCheckout:installment.issuerId];
+    [self navigateToCheckout:self.installmentsViewModel.issuerId];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -67,7 +68,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _installmentsViewModel.installments.count;
+    return _installmentsViewModel.installment.payerCosts.count;
 }
 
 

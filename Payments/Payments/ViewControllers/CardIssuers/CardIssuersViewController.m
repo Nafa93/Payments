@@ -35,6 +35,12 @@
     
     InstallmentsViewModel * installmentsViewModel = [[InstallmentsViewModel alloc] init];
     
+    installmentsViewModel.paymentMethodId = _cardIssuersViewModel.paymentMethodId;
+    
+    installmentsViewModel.issuerId = issuerId;
+    
+    installmentsViewModel.selectedAmount = _cardIssuersViewModel.selectedAmount;
+    
     installmentsViewController.installmentsViewModel = installmentsViewModel;
     
     [self.navigationController pushViewController:installmentsViewController animated:YES];

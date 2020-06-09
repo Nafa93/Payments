@@ -1,5 +1,5 @@
 //
-//  Installment.h
+//  PayerCosts.h
 //  Payments
 //
 //  Created by Nicolas Alejandro Fernandez Amorosino on 6/9/20.
@@ -10,12 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Installment : NSObject
+@interface PayerCost : NSObject
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *issuerId;
-@property (nonatomic, strong) NSString *thumbnail;
-@property (nonatomic, strong) NSMutableArray *payerCosts;
+@property (nonatomic, assign) NSString *recommendedMessage;
 
 - (instancetype)initWithData:(NSDictionary *) data;
 

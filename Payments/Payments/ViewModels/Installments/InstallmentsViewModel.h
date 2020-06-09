@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Installment.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,7 +23,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id <InstallmentsDelegate> delegate;
 
-@property (nonatomic, strong) NSMutableArray *installments;
+@property (nonatomic, strong) Installment *installment;
+
+@property (nonatomic, strong) NSString *paymentMethodId;
+
+@property (nonatomic, strong) NSString *issuerId;
+
+@property (nonatomic, assign) double selectedAmount;
+
+-(void) getInstallments;
 
 @end
 

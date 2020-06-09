@@ -10,6 +10,7 @@
 #import "AFNetworking.h"
 #import "PaymentMethod.h"
 #import "CardIssuer.h"
+#import "Installment.h"
 
 @implementation ServiceManager
 
@@ -94,6 +95,28 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"Failed :(");
     }];
+}
+
+- (void)getInstallments:(double) amount :(NSString *)paymentMethodId :(NSString *)issuerId :(void (^)(Installment * _Nonnull))completion {
+    
+    NSString *selectedAmount = [[[NSNumber alloc] initWithDouble:amount] stringValue];
+    
+    NSString *methodUrl = [_baseUrl stringByAppendingString:@"payment_methods/installments"];
+       
+    NSDictionary *parameters = @{@"public_key": _publicKey, @"payment_method_id": paymentMethodId, @"issuer.id": issuerId, @"amount": selectedAmount};
+
+    [_manager GET:methodUrl parameters:parameters headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+       NSLog(@"Method in progress.");
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+       
+       Installment *installment = [[Installment alloc] initWithData:responseObject];
+       
+       completion(installment);
+       
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+       NSLog(@"Failed :(");
+    }];
+    
 }
 
 @end

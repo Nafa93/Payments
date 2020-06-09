@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
 #import "PaymentMethod.h"
+#import "Installment.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(id) sharedInstance;
 -(void) getPaymentMethods:(void (^)(NSMutableArray *paymentMethods)) completion;
 -(void) getCardIssuers: (NSString *) paymentMethodId: (void (^)(NSMutableArray *cardIssuers)) completion;
+-(void) getInstallments:(double) amount :(NSString *)paymentMethodId :(NSString *)issuerId :(void (^)(Installment * _Nonnull))completion;
 
 @end
 

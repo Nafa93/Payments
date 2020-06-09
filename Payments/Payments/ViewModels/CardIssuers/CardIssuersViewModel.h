@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSMutableArray *cardIssuers;
 @property (nonatomic, assign) double selectedAmount;
 
--(id)initWithPaymentMethodId: (NSString *)paymentMethodId;
+-(instancetype)initWithPaymentMethodId: (NSString *)paymentMethodId;
 
 -(void) getCardIssuers;
 

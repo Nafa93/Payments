@@ -11,7 +11,7 @@
 
 @implementation CardIssuersViewModel
 
--(id)initWithPaymentMethodId: (NSString *)paymentMethodId {
+-(instancetype)initWithPaymentMethodId: (NSString *)paymentMethodId {
     self = [super init];
     if (self) {
         self.paymentMethodId = paymentMethodId;
