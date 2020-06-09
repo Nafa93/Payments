@@ -13,7 +13,7 @@
 
 @interface UIViewController (AlertExtension)
 
-- (void) showAlertWithTitle:(NSString *)title andMessage:(NSString *)message  buttonTitle:(NSString *)buttonTitle andHandler:(void (^)(UIAlertAction * action))handler;
+- (void)showAlertWithTitle:(NSString *)title andMessage:(NSString *)message  buttonTitle:(NSString *)buttonTitle andHandler:(void (^)(UIAlertAction * action))handler;
 
 @end
 

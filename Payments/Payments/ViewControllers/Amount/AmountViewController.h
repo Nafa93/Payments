@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AmountViewController : UIViewController <UITextFieldDelegate>
 
+@property (weak, nonatomic) IBOutlet UITextField *amount;
+
 @property (nonatomic, strong) AmountViewModel *amountViewModel;
 
 @end

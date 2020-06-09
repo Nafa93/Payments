@@ -35,7 +35,7 @@
     
 }
 
--(void) navigateToCheckout:(NSString *) issuerId :(NSString *) chosenInstallment {
+- (void)navigateToCheckout:(NSString *) issuerId :(NSString *) chosenInstallment {
     CheckoutViewController *checkoutViewController = [[CheckoutViewController alloc] init];
 
     CheckoutViewModel *checkoutViewModel = [[CheckoutViewModel alloc] init];

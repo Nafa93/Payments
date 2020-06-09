@@ -11,8 +11,6 @@
 
 @interface AmountViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *amount;
-
 @end
 
 @implementation AmountViewController

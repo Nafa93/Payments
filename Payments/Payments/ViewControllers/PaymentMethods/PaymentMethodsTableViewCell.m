@@ -16,8 +16,4 @@
 
 @synthesize name = _name;
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-}
-
 @end

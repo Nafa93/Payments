@@ -14,8 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIActivityIndicatorView *spinner;
 
--(void) startLoadingSpinner;
--(void) stopLoadingSpinner;
+- (void)startLoadingSpinner;
+- (void)stopLoadingSpinner;
 
 @end
 

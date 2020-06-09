@@ -35,7 +35,7 @@
     [_cardIssuersViewModel getCardIssuers];
 }
 
--(void) navigateToInstallmentsViewController:(NSString *) issuerId :(NSString *) cardIssuer {
+- (void)navigateToInstallmentsViewController:(NSString *) issuerId :(NSString *) cardIssuer {
     InstallmentsViewController *installmentsViewController = [[InstallmentsViewController alloc] init];
     
     InstallmentsViewModel * installmentsViewModel = [[InstallmentsViewModel alloc] init];

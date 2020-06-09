@@ -21,12 +21,12 @@
     _spinner.center = [UIApplication sharedApplication].windows[0].center;
 }
 
--(void)startLoadingSpinner {
+- (void)startLoadingSpinner {
     [self.view addSubview:_spinner];
     [_spinner startAnimating];
 }
 
--(void)stopLoadingSpinner {
+- (void)stopLoadingSpinner {
     [_spinner removeFromSuperview];
 }
 

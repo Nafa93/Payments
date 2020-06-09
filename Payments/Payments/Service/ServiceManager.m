@@ -45,7 +45,7 @@
     return self;
 }
 
--(void) getPaymentMethods:(void (^)(NSMutableArray *paymentMethods)) completion failureBlock:(nonnull void (^)(NSString * _Nonnull))failure {
+- (void)getPaymentMethods:(void (^)(NSMutableArray *paymentMethods)) completion failureBlock:(nonnull void (^)(NSString * _Nonnull))failure {
     NSString *methodUrl = [_baseUrl stringByAppendingString:@"payment_methods"];
     
     NSDictionary *parameters = @{@"public_key": _publicKey};
@@ -73,7 +73,7 @@
     }];
 }
 
--(void) getCardIssuersWithPaymentMethodId:(NSString *)paymentMethodId completionBlock:(void (^)(NSMutableArray * _Nonnull))completion failureBlock:(void (^)(NSString * _Nonnull))failure {
+- (void)getCardIssuersWithPaymentMethodId:(NSString *)paymentMethodId completionBlock:(void (^)(NSMutableArray * _Nonnull))completion failureBlock:(void (^)(NSString * _Nonnull))failure {
     NSString *methodUrl = [_baseUrl stringByAppendingString:@"payment_methods/card_issuers"];
     
     NSDictionary *parameters = @{@"public_key": _publicKey, @"payment_method_id": paymentMethodId};
