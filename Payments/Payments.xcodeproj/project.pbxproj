@@ -41,6 +41,7 @@
 		196E476A248F696B00F004BC /* CheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E4768248F696B00F004BC /* CheckoutViewController.m */; };
 		196E476B248F696B00F004BC /* CheckoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196E4769248F696B00F004BC /* CheckoutViewController.xib */; };
 		196E476F248F69EA00F004BC /* CheckoutViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E476E248F69EA00F004BC /* CheckoutViewModel.m */; };
+		196E4773248FF82E00F004BC /* UIViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E4772248FF82E00F004BC /* UIViewController+Alert.m */; };
 		289FF9122C74911B001F68E3 /* Pods_Payments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100FCDB1149E355E6A774BDD /* Pods_Payments.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +104,8 @@
 		196E4769248F696B00F004BC /* CheckoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckoutViewController.xib; sourceTree = "<group>"; };
 		196E476D248F69EA00F004BC /* CheckoutViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckoutViewModel.h; sourceTree = "<group>"; };
 		196E476E248F69EA00F004BC /* CheckoutViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckoutViewModel.m; sourceTree = "<group>"; };
+		196E4771248FF7B800F004BC /* UIViewController+Alert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alert.h"; sourceTree = "<group>"; };
+		196E4772248FF82E00F004BC /* UIViewController+Alert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alert.m"; sourceTree = "<group>"; };
 		2BEC7D1BA78D34759D17B8F0 /* Pods-Payments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payments.release.xcconfig"; path = "Target Support Files/Pods-Payments/Pods-Payments.release.xcconfig"; sourceTree = "<group>"; };
 		D5A079FFF69097527E975BA9 /* Pods-Payments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payments.debug.xcconfig"; path = "Target Support Files/Pods-Payments/Pods-Payments.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,6 +143,7 @@
 		196E46F4248C59A000F004BC /* Payments */ = {
 			isa = PBXGroup;
 			children = (
+				196E4770248FF75100F004BC /* Extensions */,
 				196E4720248D7B1E00F004BC /* Service */,
 				196E4710248C79F900F004BC /* Models */,
 				196E470F248C79F000F004BC /* ViewModels */,
@@ -320,6 +324,15 @@
 			path = Checkout;
 			sourceTree = "<group>";
 		};
+		196E4770248FF75100F004BC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				196E4771248FF7B800F004BC /* UIViewController+Alert.h */,
+				196E4772248FF82E00F004BC /* UIViewController+Alert.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C23A635136873895192C0632 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,6 +477,7 @@
 				196E4741248F0D6A00F004BC /* CardIssuersViewController.m in Sources */,
 				196E46F7248C59A000F004BC /* AppDelegate.m in Sources */,
 				196E4708248C59A200F004BC /* main.m in Sources */,
+				196E4773248FF82E00F004BC /* UIViewController+Alert.m in Sources */,
 				196E4748248F0E9D00F004BC /* CardIssuersViewModel.m in Sources */,
 				196E4734248ED2F700F004BC /* PaymentMethodsTableViewCell.m in Sources */,
 				196E471F248D6DCB00F004BC /* ServiceManager.m in Sources */,

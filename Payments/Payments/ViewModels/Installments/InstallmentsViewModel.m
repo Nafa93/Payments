@@ -14,10 +14,12 @@
 -(void) getInstallments {
     ServiceManager *sharedInstance = [ServiceManager sharedInstance];
 
-    [sharedInstance getInstallments: _selectedAmount :_paymentMethodId :_issuerId :^(Installment * _Nonnull installment) {
+    [sharedInstance getInstallmentsWithAmount:_selectedAmount paymentMethodId:_paymentMethodId issuerId:_issuerId completionBlock:^(Installment * _Nonnull installment) {
         self.installment = installment;
         
         [self.delegate installmentsFetched:self];
+    } failureBlock:^(NSString * _Nonnull error) {
+        [self.delegate installmentsFailed:self error:error];
     }];
 }
 

@@ -27,26 +27,10 @@
     self.title = @"Monto a Pagar";
 }
 
--(void)displayErrorAlert:(NSString *) message {
-    UIAlertController * alert = [UIAlertController
-                                 alertControllerWithTitle:@"Error"
-                                 message:message
-                                 preferredStyle:UIAlertControllerStyleAlert];
-
-    UIAlertAction* okButton = [UIAlertAction
-                               actionWithTitle:@"Ok"
-                               style:UIAlertActionStyleDefault
-                               handler:^(UIAlertAction * action) {}];
-
-    [alert addAction:okButton];
-
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
 - (IBAction)navigateToPaymentMethodsViewController:(id)sender {
     
     if (_amountViewModel.selectedAmount == 0) {
-        [self displayErrorAlert:@"Debes ingresar un valor para continuar"];
+        [self showAlertWithTitle:@"Error" andMessage:@"Debes ingresar un valor para continuar" buttonTitle:@"Ok" andHandler:nil];
         
         return;
     }
@@ -65,7 +49,7 @@
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
     if((_amountViewModel.selectedAmount * 10) > 999999.99 && ![string isEqualToString:@""]) {
-        [self displayErrorAlert:@"No puede ingresar mas de 6 digitos"];
+        [self showAlertWithTitle:@"Error" andMessage:@"No puede ingresar mas de 6 digitos" buttonTitle:@"Ok" andHandler:nil];
         
         return NO;
     }

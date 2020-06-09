@@ -49,7 +49,21 @@
 }
 
 - (void)installmentsFetched:(InstallmentsViewModel *)sender {
+    if (_installmentsViewModel.installment.payerCosts.count == 0) {
+        [self showAlertWithTitle:@"Error" andMessage:@"Por el momento no hay informacion para mostrar." buttonTitle:@"Volver atras" andHandler:^(UIAlertAction *action) {
+            [self.navigationController popViewControllerAnimated:true];
+        }];
+        
+        return;
+    }
+    
     [self.tableView reloadData];
+}
+
+- (void)installmentsFailed:(InstallmentsViewModel *)sender error:(NSString *)error {
+    [self showAlertWithTitle:@"Error" andMessage:error buttonTitle:@"Volver atras" andHandler:^(UIAlertAction *action) {
+        [self.navigationController popViewControllerAnimated:true];
+    }];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

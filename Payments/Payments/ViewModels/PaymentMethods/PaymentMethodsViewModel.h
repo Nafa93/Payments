@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol PaymentMethodsDelegate <NSObject>
 
 - (void) paymentMethodsFetched: (PaymentMethodsViewModel *) sender;
+- (void) paymentMethodsFailed: (PaymentMethodsViewModel *) sender error:(NSString *)error;
 
 @end
 

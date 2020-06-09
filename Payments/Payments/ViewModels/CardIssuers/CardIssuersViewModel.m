@@ -22,10 +22,12 @@
 -(void) getCardIssuers {
     ServiceManager *sharedInstance = [ServiceManager sharedInstance];
 
-    [sharedInstance getCardIssuers:_paymentMethodId:^(NSMutableArray * _Nonnull cardIssuers) {
+    [sharedInstance getCardIssuersWithPaymentMethodId:_paymentMethodId completionBlock:^(NSMutableArray * _Nonnull cardIssuers) {
         self.cardIssuers = cardIssuers;
         
         [self.delegate cardIssuersFetched:self];
+    } failureBlock:^(NSString * _Nonnull error) {
+        [self.delegate cardIssuersFailed:self error:error];
     }];
 }
 

@@ -20,9 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
 
 +(id) sharedInstance;
--(void) getPaymentMethods:(void (^)(NSMutableArray *paymentMethods)) completion;
--(void) getCardIssuers: (NSString *) paymentMethodId: (void (^)(NSMutableArray *cardIssuers)) completion;
--(void) getInstallments:(double) amount :(NSString *)paymentMethodId :(NSString *)issuerId :(void (^)(Installment * _Nonnull))completion;
+-(void) getPaymentMethods:(void (^)(NSMutableArray *paymentMethods)) completion failureBlock:(void (^)(NSString *error)) failure;
+-(void) getCardIssuersWithPaymentMethodId:(NSString *)paymentMethodId completionBlock:(void (^)(NSMutableArray *cardIssuers)) completion failureBlock:(void (^)(NSString *error)) failure;
+-(void) getInstallmentsWithAmount:(double)amount paymentMethodId:(NSString *)paymentMethodId issuerId:(NSString *)issuerId completionBlock:(void (^)(Installment *installment))completion failureBlock:(void (^)(NSString *error))failure;
 
 @end
 

@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol InstallmentsDelegate <NSObject>
 
 - (void) installmentsFetched: (InstallmentsViewModel *) sender;
+- (void) installmentsFailed: (InstallmentsViewModel *) sender error:(NSString *)error;
 
 @end
 

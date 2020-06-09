@@ -53,7 +53,21 @@
 }
 
 - (void)cardIssuersFetched:(CardIssuersViewModel *)sender {
+    if (_cardIssuersViewModel.cardIssuers.count == 0) {
+        [self showAlertWithTitle:@"Error" andMessage:@"Por el momento no hay informacion para mostrar." buttonTitle:@"Volver atras" andHandler:^(UIAlertAction *action) {
+            [self.navigationController popViewControllerAnimated:true];
+        }];
+        
+        return;
+    }
+    
     [self.tableView reloadData];
+}
+
+- (void)cardIssuersFailed:(CardIssuersViewModel *)sender error:(NSString *)error {
+    [self showAlertWithTitle:@"Error" andMessage:error buttonTitle:@"Volver atras" andHandler:^(UIAlertAction *action) {
+        [self.navigationController popViewControllerAnimated:true];
+    }];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

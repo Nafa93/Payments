@@ -20,6 +20,8 @@
         self.paymentMethods = paymentMethods;
         
         [self.delegate paymentMethodsFetched:self];
+    } failureBlock:^(NSString * _Nonnull error) {
+        [self.delegate paymentMethodsFailed:self error:error];
     }];
 }
 

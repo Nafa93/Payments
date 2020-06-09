@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol CardIssuersDelegate <NSObject>
 
 - (void) cardIssuersFetched: (CardIssuersViewModel *) sender;
+- (void) cardIssuersFailed: (CardIssuersViewModel *) sender error:(NSString *) error;
 
 @end
 

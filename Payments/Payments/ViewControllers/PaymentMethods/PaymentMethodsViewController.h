@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PaymentMethodsViewModel.h"
+#import "UIViewController+Alert.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
